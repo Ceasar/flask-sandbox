@@ -8,5 +8,11 @@
             </select>
             <input type="submit">
         </form>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+        $( "form" ).on( "submit", function( event ) {
+          console.log( $( this ).serialize() );
+        });
+        </script>
     </body>
 </html>
