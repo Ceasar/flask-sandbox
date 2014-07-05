@@ -14,6 +14,5 @@ $("button").click(function(event) {
         type: "POST",
         data: data,
         dataType: "json",
-        traditional: true
     });
 });

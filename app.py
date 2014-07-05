@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         print "request.form: ", request.form
-        for x in request.form.getlist('animals'):
+        for x in request.form.getlist('animals[]'):
             print x
     return render_template("index.html")
 
