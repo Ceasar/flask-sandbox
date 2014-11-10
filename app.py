@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+import hello
+
 app = Flask(__name__)
 
 
@@ -10,6 +12,10 @@ def index():
         for x in request.form.getlist('animals[]'):
             print x
     return render_template("index.html")
+
+
+app.route('/hello')(hello.hello)
+hello.logger.handlers = app.logger.handlers
 
 
 # The following demonstrates how ``add_url_rule`` (and ``route``) can be
