@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 
+import content
 import hello
 
 app = Flask(__name__)
@@ -28,6 +29,10 @@ app.endpoint("b")(lambda: "b")
 
 app.url_map.add(app.url_rule_class("/c", endpoint="c", methods=['GET']))
 app.view_functions["c"] = lambda: "c"
+
+app.route('/manual')(content.manual_response)
+app.route('/auto')(content.auto_response)
+app.route('/json')(content.json_response)
 
 
 if __name__ == "__main__":
